@@ -1,0 +1,10 @@
+{
+  "name": "midjourney",
+  "version": "0.1.0",
+  "description": "RunAPI Midjourney skill for Claude Code, Codex, Gemini CLI, Cursor, and 50+ agents",
+  "skills": [
+    {
+      "path": "skills/midjourney/SKILL.md"
+    }
+  ]
+}
