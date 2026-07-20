@@ -9,7 +9,7 @@
 </div>
 <br/>
 
-Use Midjourney through the RunAPI CLI for one-off image generation, image editing, image-to-video, prompt analysis, and seed lookup. The canonical agent file is `skills/midjourney/SKILL.md`.
+Use Midjourney through the RunAPI CLI for one-off image generation, image editing, image-to-video, prompt analysis, prompt shortening, and seed lookup. The canonical agent file is `skills/midjourney/SKILL.md`.
 
 ## Variants
 
@@ -46,10 +46,11 @@ runapi midjourney text-to-image --input-file text-to-image.json
 runapi midjourney edit-image --input-file edit-image.json
 runapi midjourney image-to-video --input-file image-to-video.json
 runapi midjourney image-to-prompt --input-file image-to-prompt.json
+runapi midjourney shorten-prompt --input-file shorten-prompt.json
 runapi midjourney get-seed --input-file get-seed.json
 ```
 
-The first three commands create asynchronous tasks. `image-to-prompt` and `get-seed` return synchronously.
+The first three commands create asynchronous tasks. `image-to-prompt`, `shorten-prompt`, and `get-seed` return synchronously.
 
 ## Links
 

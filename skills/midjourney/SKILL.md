@@ -1,6 +1,6 @@
 ---
 name: midjourney
-description: Generate and edit images, create video from images, derive prompt suggestions, and look up seeds with Midjourney through RunAPI. Use the RunAPI CLI for one-off work and the language SDKs for application integration.
+description: Generate and edit images, create video from images, derive or shorten prompt suggestions, and look up seeds with Midjourney through RunAPI. Use the RunAPI CLI for one-off work and the language SDKs for application integration.
 documentation: https://runapi.ai/models/midjourney.md
 provider_page: https://runapi.ai/providers/midjourney.md
 catalog: https://runapi.ai/models.md
@@ -60,6 +60,7 @@ runapi midjourney text-to-image --help
 runapi midjourney edit-image --help
 runapi midjourney image-to-video --help
 runapi midjourney image-to-prompt --help
+runapi midjourney shorten-prompt --help
 runapi midjourney get-seed --help
 ```
 
@@ -78,10 +79,11 @@ Use `midjourney-v8.1` for text-to-image, `midjourney-edit-image` for edits, and 
 
 ## Synchronous Helpers
 
-`image-to-prompt` and `get-seed` return in one request. Do not add `--async` and do not call `runapi wait` for them.
+`image-to-prompt`, `shorten-prompt`, and `get-seed` return in one request. Do not add `--async` and do not call `runapi wait` for them.
 
 ```shell
 runapi midjourney image-to-prompt --input-file image-to-prompt.json
+runapi midjourney shorten-prompt --input-file shorten-prompt.json
 runapi midjourney get-seed --input-file get-seed.json
 ```
 
