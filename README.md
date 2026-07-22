@@ -9,13 +9,14 @@
 </div>
 <br/>
 
-Use Midjourney through the RunAPI CLI for one-off image generation, image editing, image-to-video, prompt analysis, prompt shortening, and seed lookup. The canonical agent file is `skills/midjourney/SKILL.md`.
+Use Midjourney through the RunAPI CLI for one-off image generation, image editing, image-to-video, first-video extension, prompt analysis, prompt shortening, and seed lookup. The canonical agent file is `skills/midjourney/SKILL.md`.
 
 ## Variants
 
 - V8.1 text to image: generate an image grid from a text prompt with `runapi midjourney text-to-image`.
 - Image editing: transform a source image with a prompt using `runapi midjourney edit-image`.
 - Image to video: animate a source image with `runapi midjourney image-to-video`.
+- First-video extension: continue the first video from an account-owned completed image-to-video task with `runapi midjourney extend-video`.
 
 ## Install
 
@@ -45,12 +46,13 @@ Claude Code can also install the repository skill directory into its user skills
 runapi midjourney text-to-image --input-file text-to-image.json
 runapi midjourney edit-image --input-file edit-image.json
 runapi midjourney image-to-video --input-file image-to-video.json
+runapi midjourney extend-video --input-file extend-video.json
 runapi midjourney image-to-prompt --input-file image-to-prompt.json
 runapi midjourney shorten-prompt --input-file shorten-prompt.json
 runapi midjourney get-seed --input-file get-seed.json
 ```
 
-The first three commands create asynchronous tasks. `image-to-prompt`, `shorten-prompt`, and `get-seed` return synchronously.
+The first four commands create asynchronous tasks. `image-to-prompt`, `shorten-prompt`, and `get-seed` return synchronously. `extend-video` accepts a completed direct image-to-video task from the current account and cannot use another extension task as its source.
 
 ## Links
 

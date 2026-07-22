@@ -1,6 +1,6 @@
 {
   "name": "midjourney",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "RunAPI Midjourney skill for Claude Code, Codex, Gemini CLI, Cursor, and 50+ agents",
   "skills": [
     {

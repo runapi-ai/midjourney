@@ -1,6 +1,6 @@
 ---
 name: midjourney
-description: Generate and edit images, create video from images, derive or shorten prompt suggestions, and look up seeds with Midjourney through RunAPI. Use the RunAPI CLI for one-off work and the language SDKs for application integration.
+description: Generate and edit images, create or extend video from images, derive or shorten prompt suggestions, and look up seeds with Midjourney through RunAPI. Use the RunAPI CLI for one-off work and the language SDKs for application integration.
 documentation: https://runapi.ai/models/midjourney.md
 provider_page: https://runapi.ai/providers/midjourney.md
 catalog: https://runapi.ai/models.md
@@ -47,6 +47,7 @@ When integrating Midjourney into an app, backend, worker, library, Rails service
 - V8.1 text to image: generate an image grid from a text prompt.
 - Image editing: transform a source image with a prompt.
 - Image to video: animate a source image.
+- First-video extension: continue the first video from a completed image-to-video task in the current account.
 
 ## CLI path
 
@@ -59,6 +60,7 @@ runapi midjourney --help
 runapi midjourney text-to-image --help
 runapi midjourney edit-image --help
 runapi midjourney image-to-video --help
+runapi midjourney extend-video --help
 runapi midjourney image-to-prompt --help
 runapi midjourney shorten-prompt --help
 runapi midjourney get-seed --help
@@ -66,16 +68,19 @@ runapi midjourney get-seed --help
 
 ## Asynchronous Requests
 
-`text-to-image`, `edit-image`, and `image-to-video` are asynchronous. Run them directly to create and poll, or add `--async` and wait separately.
+`text-to-image`, `edit-image`, `image-to-video`, and `extend-video` are asynchronous. Run them directly to create and poll, or add `--async` and wait separately.
 
 ```shell
 runapi midjourney text-to-image --input-file text-to-image.json
 runapi midjourney edit-image --async --input-file edit-image.json
 runapi wait <task-id> --service midjourney --action edit-image
 runapi midjourney image-to-video --input-file image-to-video.json
+runapi midjourney extend-video --input-file extend-video.json
 ```
 
 Use `midjourney-v8.1` for text-to-image, `midjourney-edit-image` for edits, and `midjourney-image-to-video` for image-to-video. Image and video input URLs must be publicly fetchable.
+
+`extend-video` requires `source_task_id` from a completed direct `image-to-video` task owned by the current account. It extends only that task's first video. Do not pass a video ID, index, model, resolution, or another extension task.
 
 ## Synchronous Helpers
 
