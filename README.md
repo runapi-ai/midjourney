@@ -57,7 +57,7 @@ The first four commands create asynchronous tasks. `image-to-prompt`, `shorten-p
 ## Links
 
 - Model page: https://runapi.ai/models/midjourney
-- Product docs: https://runapi.ai/docs#midjourney
+- Product docs: https://runapi.ai/docs/api/midjourney/text-to-image
 - SDK repository: https://github.com/runapi-ai/midjourney-sdk
 - Provider page: https://runapi.ai/providers/midjourney
 - Full catalog: https://runapi.ai/models
