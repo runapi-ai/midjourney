@@ -1,5 +1,11 @@
 # Changelog
 
+## [v0.3.3](https://github.com/runapi-ai/midjourney/releases/tag/v0.3.3) - 2026-09-04
+
+### Changed
+- Document terminal responses, 202 acceptance, and Task Result continuation for supported capabilities.
+
+
 ## [v0.3.2](https://github.com/runapi-ai/midjourney/releases/tag/v0.3.2) - 2026-08-12
 
 ### Changed
